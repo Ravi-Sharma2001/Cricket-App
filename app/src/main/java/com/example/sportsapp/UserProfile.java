@@ -45,9 +45,14 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.recent:
+            case R.id.upcoming:
                 Intent intent = new Intent(this, FirstPage.class);
                 startActivity(intent);
+                break;
+            case R.id.recent1:
+                Intent intent1 = new Intent(this, RecentMatches.class);
+                startActivity(intent1);
+                break;
         }
         return true;
     }

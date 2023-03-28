@@ -5,7 +5,7 @@
         android:title="Upcoming"
         android:icon="@drawable/fire"/>
     <item
-        android:id="@+id/recent"
+        android:id="@+id/recent1"
         android:title="Recent"
         android:icon="@drawable/recent"/>
     <item
