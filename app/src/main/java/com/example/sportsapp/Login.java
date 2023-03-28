@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
             animation.setScaleY(1f);
             animation.playAnimation();
             float x=animation.getY();
-            animation.setY(x-160);
+            animation.setY(x-75);
             animation.addAnimatorListener(new Animator.AnimatorListener() {
 
                 @Override

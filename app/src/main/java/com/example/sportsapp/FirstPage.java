@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -24,5 +26,10 @@ public class FirstPage extends AppCompatActivity {
         rvMatches.setAdapter(adapter);
         // Set layout manager to position the items
         rvMatches.setLayoutManager(new LinearLayoutManager(this));
+    }
+    public void logout(View view)
+    {
+        Intent i=new Intent(this,LandingPage.class);
+        startActivity(i);
     }
 }
