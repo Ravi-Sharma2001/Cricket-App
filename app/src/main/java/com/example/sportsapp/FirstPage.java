@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.*;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -15,7 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
-import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -50,5 +49,10 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
                 startActivity(intent);
         }
         return true;
+    }
+    public void logout(View view)
+    {
+        Intent i=new Intent(this,LandingPage.class);
+        startActivity(i);
     }
 }

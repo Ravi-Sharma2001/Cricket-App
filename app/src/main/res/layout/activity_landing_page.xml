@@ -55,6 +55,7 @@
         android:textAlignment="center"
         android:textColor="#F1EBEB"
         android:textSize="28sp"
+        android:translationY="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
