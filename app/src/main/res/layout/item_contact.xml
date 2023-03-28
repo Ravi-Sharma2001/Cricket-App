@@ -27,52 +27,54 @@
 
         <TextView
             android:id="@+id/hometeam"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="MI"
-            android:textColor="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#959090"
             android:textSize="45sp"
-            android:translationX="40dp"
+            android:translationX="5dp"
             android:translationY="42dp" />
 
         <TextView
             android:id="@+id/stadium"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chinnaswami Stadium"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:translationX="70dp"
             android:translationY="110dp" />
 
         <TextView
             android:id="@+id/awayteam"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="CSK"
-            android:textColor="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#959090"
             android:textSize="45sp"
-            android:translationX="210dp"
+            android:translationX="185dp"
             android:translationY="42dp" />
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="VS"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:translationX="150dp"
             android:translationY="55dp" />
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="39/03/23"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:translationX="120dp"
             android:translationY="20dp" />
 
 

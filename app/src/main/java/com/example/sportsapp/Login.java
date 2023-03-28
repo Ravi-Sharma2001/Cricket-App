@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
     }
     public void userCheck(View view) throws InterruptedException {
         LottieAnimationView animation = findViewById(R.id.animationView);
-        username=findViewById(R.id.email);
+        username=findViewById(R.id.Userid);
         String uname=username.getText().toString();
         password=findViewById(R.id.pass);
         String pass=password.getText().toString();

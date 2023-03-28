@@ -11,10 +11,12 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="450dp"
+        android:layout_height="450dp"
         android:layout_marginStart="-10dp"
         android:layout_marginTop="-60dp"
+        android:translationX="-30dp"
+        android:translationY="-10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
@@ -35,7 +37,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_height="310dp"
         android:layout_marginTop="200dp"
         android:animationCache="false"
         android:backgroundTint="#F8F0C6"
@@ -103,22 +105,22 @@
 
 
         <TextView
-            android:id="@+id/phonelabel"
+            android:id="@+id/useridlabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone :"
+            android:text="User ID :"
             android:textColor="#000000"
             android:textSize="24sp"
             android:translationX="15dp"
-            android:translationY="102dp" />
+            android:translationY="103dp" />
 
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/Userid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter Phone Number"
-            android:inputType="phone"
+            android:hint="Enter UserID"
+            android:inputType="textEmailAddress"
             android:textColor="#000000"
             android:textColorHighlight="#353030"
             android:textColorHint="#837B7B"
@@ -128,31 +130,6 @@
             android:translationY="95dp" />
 
         <TextView
-            android:id="@+id/emaillabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="E-mail :"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:translationX="15dp"
-            android:translationY="147dp" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter E-mail"
-            android:inputType="textEmailAddress"
-            android:textColor="#000000"
-            android:textColorHighlight="#353030"
-            android:textColorHint="#837B7B"
-            android:textColorLink="#000000"
-            android:textSize="20sp"
-            android:translationX="120dp"
-            android:translationY="140dp" />
-
-        <TextView
             android:id="@+id/passlabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -160,7 +137,7 @@
             android:textColor="#000000"
             android:textSize="24sp"
             android:translationX="15dp"
-            android:translationY="192dp" />
+            android:translationY="148dp" />
 
         <EditText
             android:id="@+id/password"
@@ -175,7 +152,7 @@
             android:textColorLink="#000000"
             android:textSize="20sp"
             android:translationX="120dp"
-            android:translationY="185dp" />
+            android:translationY="140dp" />
 
         <TextView
             android:id="@+id/confirmpasslabel"
@@ -185,7 +162,7 @@
             android:textColor="#000000"
             android:textSize="24sp"
             android:translationX="15dp"
-            android:translationY="237dp" />
+            android:translationY="193dp" />
 
         <EditText
             android:id="@+id/confirmpassword"
@@ -200,7 +177,7 @@
             android:textColorLink="#000000"
             android:textSize="20sp"
             android:translationX="120dp"
-            android:translationY="230dp" />
+            android:translationY="185dp" />
 
 
         <Button
@@ -210,7 +187,7 @@
             android:onClick="checkRegistration"
             android:text="REGISTER"
             android:translationX="120dp"
-            android:translationY="280dp" />
+            android:translationY="240dp" />
 
 
     </androidx.cardview.widget.CardView>

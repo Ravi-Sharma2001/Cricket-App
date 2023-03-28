@@ -73,7 +73,7 @@
             android:translationY="10dp" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/Userid"
             android:layout_width="174dp"
             android:layout_height="wrap_content"
             android:ems="10"

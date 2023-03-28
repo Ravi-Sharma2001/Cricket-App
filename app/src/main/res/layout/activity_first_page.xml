@@ -8,16 +8,14 @@
     android:backgroundTint="#3F51B5"
     tools:context=".FirstPage">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMatches"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="411dp"
+        android:layout_height="609dp"
         android:translationY="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

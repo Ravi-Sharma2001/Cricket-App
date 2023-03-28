@@ -29,23 +29,24 @@ public class Matches {
         return stadium;
     }
     static List<List<String>> match_detail=new ArrayList<List<String>>();
-    static String[][] matcharr ={{"MI","CSK","03/05/2005","Chinnaswami Stadium"},
-            {"RCB","CSK","03/05/2005","Chinnaswami Stadium"},
-            {"KKR","CSK","03/05/2005","Dharamshala Stadium"},
-            {"DC","MI","03/05/2005","Eden Gardens Stadium"},
-            {"MI","CSK","03/05/2005","Vankhade Stadium"},
-            {"SRH","MI","03/05/2005","Dharamshala Stadium"},
-            {"RR","RCB","03/05/2005","Chinnaswami Stadium"},
-            {"KXP","CSK","03/05/2005","Eden Gardens Stadium"},
-            {"KKR","CSK","03/05/2005","Vankhade Stadium"},
-            {"CSK","KKR","03/05/2005","Chinnaswami Stadium"},
-            {"SRH","RCB","03/05/2005","Eden Gardens Stadium"},
-            {"RCB","KXP","03/05/2005","Vankhade Stadium"},
+    static String[][] matcharr ={{"MI","CSK","03/05/2005","Chinnaswami, Chennai"},
+            {"RCB","CSK","03/05/2005","Chinnaswami, Chennai"},
+            {"KKR","CSK","03/05/2005","Dharamshala, Delhi"},
+            {"DC","MI","03/05/2005","Eden Gardens, Kolkata"},
+            {"MI","CSK","03/05/2005","Vankhade, Mumbai"},
+            {"SRH","MI","03/05/2005","Dharamshala, Delhi"},
+            {"RR","RCB","03/05/2005","Chinnaswami, Chennai"},
+            {"KXP","CSK","03/05/2005","Eden Gardens, Kolkata"},
+            {"KKR","CSK","03/05/2005","Vankhade, Mumbai"},
+            {"CSK","KKR","03/05/2005","Chinnaswami, Chennai"},
+            {"SRH","RCB","03/05/2005","Eden Gardens, Kolkata"},
+            {"RCB","KXP","03/05/2005","Vankhade, Mumbai"},
 
     };
 
 
         public static ArrayList<Matches> createContactsList() {
+
             for(int i=0;i<matcharr.length;i++) {
                 List<String> match1 = new ArrayList<String>();
                 match1.add(matcharr[i][0]);
