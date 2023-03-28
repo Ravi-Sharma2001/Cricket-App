@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
         password=findViewById(R.id.pass);
         String pass=password.getText().toString();
 
-        if(uname.equals("Ravi") && pass.equals("ravi@1234"))
+        if(uname.equals("") && pass.equals(""))
         {
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
             animation.setAnimation(R.raw.takeoff);
