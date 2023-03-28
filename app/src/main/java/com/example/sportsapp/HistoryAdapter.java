@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ContactsAdapter extends
-        RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
-    List<Matches> Match;
+public class HistoryAdapter extends
+        RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
+    List<MatchHistory> Match;
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -21,33 +21,35 @@ public class ContactsAdapter extends
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.item_contact, parent, false);
+        View historyView = inflater.inflate(R.layout.match_history, parent, false);
 
         // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(contactView);
+        ViewHolder viewHolder = new ViewHolder(historyView);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Matches match = Match.get(position);
+        MatchHistory match = Match.get(position);
 
         // Set item views based on your views and data model
         TextView hometeam = holder.hometeam;
         TextView awayteam = holder.awayteam;
         TextView date = holder.date;
-        TextView stadium = holder.stadium;
+        TextView investment = holder.investment;
+        TextView income = holder.income;
         hometeam.setText(match.getHome());
         awayteam.setText(match.getAway());
         date.setText(match.getDate());
-        stadium.setText(match.getStadium());
+        investment.setText("Income: "+match.getInvestment());
+        income.setText(match.getIncome());
     }
 
     @Override
     public int getItemCount() {
         return Match.size();
     }
-    public ContactsAdapter(List<Matches> matches) {
+    public HistoryAdapter(List<MatchHistory> matches) {
         Match = matches;
     }
 
@@ -60,7 +62,8 @@ public class ContactsAdapter extends
         public TextView hometeam;
         public TextView awayteam;
         public TextView date;
-        public TextView stadium;
+        public TextView investment;
+        public TextView income;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
@@ -72,7 +75,8 @@ public class ContactsAdapter extends
             hometeam = (TextView) itemView.findViewById(R.id.hometeam);
             awayteam = (TextView) itemView.findViewById(R.id.awayteam);
             date = (TextView) itemView.findViewById(R.id.date);
-            stadium = (TextView) itemView.findViewById(R.id.investment);
+            investment = (TextView) itemView.findViewById(R.id.investment);
+            income = (TextView) itemView.findViewById(R.id.income);
         }
     }
 }

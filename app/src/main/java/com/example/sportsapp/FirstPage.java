@@ -37,7 +37,7 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
         rvMatches.setLayoutManager(new LinearLayoutManager(this));
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.upcoming);
         bottomNavigationView.setOnItemSelectedListener(this);
     }
     @Override

@@ -15,19 +15,19 @@
     <androidx.cardview.widget.CardView
         android:layout_width="330dp"
         android:layout_height="150dp"
+        android:background="@drawable/backshadow"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:elevation="8dp"
         android:translationX="15dp"
         app:cardBackgroundColor="#BC3F51B5"
         app:cardCornerRadius="15dp"
         app:cardElevation="0dp"
-        android:elevation="8dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0.0px"
-        android:background="@drawable/backshadow"
         card_view:cardElevation="10dp">
 
         <TextView
             android:id="@+id/hometeam"
-            android:layout_width="140dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="MI"
             android:textAlignment="center"
@@ -40,36 +40,57 @@
             android:id="@+id/investment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chinnaswami Stadium"
-            android:textAlignment="center"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="invested: 100"
+            android:textAlignment="viewStart"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:translationY="110dp" />
 
         <TextView
             android:id="@+id/awayteam"
-            android:layout_width="140dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="CSK"
             android:textAlignment="center"
             android:textColor="#959090"
             android:textSize="45sp"
-            android:translationX="185dp"
+            android:translationX="140dp"
             android:translationY="42dp" />
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="match_parent"
+            android:layout_width="264dp"
             android:layout_height="wrap_content"
             android:text="VS"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
+            android:translationX="-10dp"
             android:translationY="55dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:translationX="155dp"
+            android:translationY="112dp"
+            app:srcCompat="@drawable/coin" />
+
+        <TextView
+            android:id="@+id/income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+150"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="20sp"
+            android:translationX="275dp"
+            android:translationY="110dp" />
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="match_parent"
+            android:layout_width="121dp"
             android:layout_height="wrap_content"
             android:text="39/03/23"
             android:textAlignment="center"
