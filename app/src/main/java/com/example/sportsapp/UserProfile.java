@@ -5,22 +5,37 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class UserProfile extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
@@ -28,6 +43,7 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
     ArrayList<MatchHistory> Matches;
     FirebaseAuth auth;
     FirebaseUser user;
+    JSONObject userDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -41,6 +57,11 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
             finish();
         }
         else {
+            try {
+                callAPI(user.getEmail());
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
             TextView t=findViewById(R.id.textView7);
             t.setText(user.getEmail());
         }
@@ -58,6 +79,41 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
         matchHistory.setAdapter(adapter);
         // Set layout manager to position the items
         matchHistory.setLayoutManager(new LinearLayoutManager(this));
+    }
+    public void changeDetails() throws JSONException {
+        TextView name=findViewById(R.id.textView7);
+        TextView coins=findViewById(R.id.textView8);
+        name.setText(userDetails.getString("name")+"\n"+userDetails.getString("email"));
+        coins.setText(userDetails.getString("coins"));
+    }
+
+public void callAPI(final String email) throws JSONException {
+        RequestQueue MyRequestQueue = Volley.newRequestQueue(this);
+        String url = "https://cricketappserver.onrender.com/getUser"; // <----enter your post url here
+        JSONObject object = new JSONObject();
+        object.put("email",email);
+         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
+                 (response -> {
+                     try{
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject = response;
+                        JSONArray array = new JSONArray();
+                        array = jsonObject.getJSONArray("val");
+                        userDetails  = new JSONObject();
+                        userDetails = array.getJSONObject(0);
+                         changeDetails();
+//                        Log.d("api",String.valueOf(response));
+                         Log.d("api","final obj:"+userDetails);
+//                         String error = response.getString("httpStatus");
+                     }catch (Exception e){
+                         e.printStackTrace();
+                     }
+                 })
+         ,(error -> {
+             Log.e("Error","Error"+error.getMessage());
+         }));
+         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+         requestQueue.add(jsonObjectRequest);
     }
 
     public void logout(View view)
