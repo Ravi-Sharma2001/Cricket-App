@@ -85,6 +85,10 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
         TextView coins=findViewById(R.id.textView8);
         name.setText(userDetails.getString("name")+"\n"+userDetails.getString("email"));
         coins.setText(userDetails.getString("coins"));
+
+        TextView initials=findViewById(R.id.textView6);
+        String init=userDetails.getString("name");
+        initials.setText(String.valueOf(init.charAt(0))+String.valueOf(init.charAt(init.indexOf(' ')+1)));
     }
 
 public void callAPI(final String email) throws JSONException {

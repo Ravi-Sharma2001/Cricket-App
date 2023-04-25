@@ -48,9 +48,9 @@
             android:text="RS"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="96sp"
-            android:translationX="-30dp"
-            android:translationY="-30dp" />
+            android:textSize="80sp"
+            android:translationX="-40dp"
+            android:translationY="-10dp" />
 
         <TextView
             android:id="@+id/textView7"
@@ -59,7 +59,7 @@
             android:fontFamily="sans-serif-medium"
             android:text=""
             android:textSize="24sp"
-            android:translationX="180dp"
+            android:translationX="150dp"
             android:translationY="70dp" />
 
         <com.airbnb.lottie.LottieAnimationView
@@ -68,8 +68,8 @@
             android:layout_height="43dp"
             android:layout_marginStart="248dp"
             android:layout_marginTop="132dp"
-            android:translationX="-70dp"
-            android:translationY="-10dp"
+            android:translationX="-120dp"
+            android:translationY="0dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/coins" />
@@ -81,8 +81,8 @@
             android:rotationX="0"
             android:text="560"
             android:textSize="20sp"
-            android:translationX="220dp"
-            android:translationY="130dp" />
+            android:translationX="170dp"
+            android:translationY="140dp" />
 
         <Button
             android:id="@+id/button3"
