@@ -8,19 +8,22 @@ public class newsModel {
 
     public  newsModel(String title, String author){
         try {
-            this.title = title;
+                this.title = title;
         }catch (Error e){
             Log.e("class",e.getMessage());
         }
         try {
-            this.author = author;
+            if(author.equals("null"))
+                this.author="Anonymous";
+            else
+                this.author = author;
         }catch(Error e){
             Log.e("class", e.getMessage());
         }
     }
 
     public String getTitle() {
-        return title;
+            return title;
     }
 
     public void setTitle(String title) {

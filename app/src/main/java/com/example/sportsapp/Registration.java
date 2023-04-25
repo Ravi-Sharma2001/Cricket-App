@@ -29,16 +29,7 @@ public class Registration extends AppCompatActivity {
     EditText pass,cpass,name,dob,user;
     FirebaseAuth auth;
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        FirebaseUser currentUser = auth.getCurrentUser();
-//        if(currentUser != null){
-//            Intent i=new Intent(getApplicationContext(), FirstPage.class);
-//            startActivity(i);
-//            finish();
-//        }
-//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

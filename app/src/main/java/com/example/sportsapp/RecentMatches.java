@@ -41,17 +41,25 @@ public class RecentMatches extends AppCompatActivity implements NavigationBarVie
     }
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.profile:
+            case R.id.profile: {
                 Intent intent = new Intent(this, UserProfile.class);
-                intent.putExtra("buttonStatus",item.getItemId());
+                intent.putExtra("buttonStatus", item.getItemId());
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.upcoming:
+            }
+            case R.id.upcoming: {
                 Intent intent1 = new Intent(this, FirstPage.class);
                 startActivity(intent1);
                 finish();
                 break;
+            }
+            case R.id.news:{
+                Intent intent2 = new Intent(this, NewsFeed.class);
+                intent2.putExtra("buttonStatus", item.getItemId());
+                startActivity(intent2);
+                break;
+            }
 
         }
         return true;
