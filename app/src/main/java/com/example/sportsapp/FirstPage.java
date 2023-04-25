@@ -6,6 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.*;
 import androidx.annotation.NonNull;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -45,21 +52,30 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
         bottomNavigationView.setSelectedItemId(R.id.upcoming);
         bottomNavigationView.setOnItemSelectedListener(this);
     }
+
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.profile:
+            case R.id.profile: {
                 Intent intent = new Intent(this, UserProfile.class);
-                intent.putExtra("buttonStatus",item.getItemId());
+                intent.putExtra("buttonStatus", item.getItemId());
                 startActivity(intent);
-                finish();
-
                 break;
-            case R.id.recent1:
+            }
+            case R.id.news:{
+                Intent intent = new Intent(this, NewsFeed.class);
+                intent.putExtra("buttonStatus", item.getItemId());
+                startActivity(intent);
+                break;
+            }
+            case R.id.recent1:{
                 Intent intent1 = new Intent(this, RecentMatches.class);
                 startActivity(intent1);
                 finish();
                 break;
+             }
         }
         return true;
     }
