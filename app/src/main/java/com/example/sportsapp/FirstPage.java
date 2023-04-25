@@ -28,11 +28,12 @@ import java.util.ArrayList;
 public class FirstPage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
     ArrayList<Matches> match;
     BottomNavigationView bottomNavigationView;
+    RecyclerView rvMatches;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
-        RecyclerView rvMatches = (RecyclerView) findViewById(R.id.rvMatches);
+        rvMatches=(RecyclerView) findViewById(R.id.rvMatches);
 
         // Initialize contacts
         match = Matches.createContactsList();
@@ -42,6 +43,10 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
         rvMatches.setAdapter(adapter);
         // Set layout manager to position the items
         rvMatches.setLayoutManager(new LinearLayoutManager(this));
+        rvMatches.setOnClickListener(view -> {
+        Intent i=new Intent(getApplicationContext(),UpcomingMatchStats.class);
+        startActivity(i);
+        });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.upcoming);
@@ -59,23 +64,26 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
                 startActivity(intent);
                 break;
             }
-            case R.id.recent: {
-                Intent intent = new Intent(this, FirstPage.class);
-                startActivity(intent);
-                break;
-            }
             case R.id.news:{
                 Intent intent = new Intent(this, NewsFeed.class);
                 intent.putExtra("buttonStatus", item.getItemId());
                 startActivity(intent);
                 break;
             }
+            case R.id.recent1:{
+                Intent intent1 = new Intent(this, RecentMatches.class);
+                startActivity(intent1);
+                finish();
+                break;
+             }
         }
         return true;
     }
-    public void logout(View view)
+    public void Stats(View view)
     {
-        Intent i=new Intent(this,LandingPage.class);
+        Intent i=new Intent(getApplicationContext(),UpcomingMatchStats.class);
         startActivity(i);
+
     }
+
 }

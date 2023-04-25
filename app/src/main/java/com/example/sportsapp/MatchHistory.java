@@ -36,16 +36,9 @@ public class MatchHistory {
     static List<List<String>> match_detail=new ArrayList<List<String>>();
     static String[][] matcharr ={{"MI","CSK","03/05/2005","100","+150"},
             {"RCB","CSK","03/05/2005","200","+300"},
-//            {"KKR","CSK","03/05/2005","Dharamshala, Delhi"},
-//            {"DC","MI","03/05/2005","Eden Gardens, Kolkata"},
-//            {"MI","CSK","03/05/2005","Vankhade, Mumbai"},
-//            {"SRH","MI","03/05/2005","Dharamshala, Delhi"},
-//            {"RR","RCB","03/05/2005","Chinnaswami, Chennai"},
-//            {"KXP","CSK","03/05/2005","Eden Gardens, Kolkata"},
-//            {"KKR","CSK","03/05/2005","Vankhade, Mumbai"},
-//            {"CSK","KKR","03/05/2005","Chinnaswami, Chennai"},
-//            {"SRH","RCB","03/05/2005","Eden Gardens, Kolkata"},
-//            {"RCB","KXP","03/05/2005","Vankhade, Mumbai"},
+            {"KKR","CSK","03/05/2005","200","+300"},
+            {"DC","MI","03/05/2005","200","+300"},
+            {"MI","CSK","03/05/2005","200","+300"},
 
     };
 

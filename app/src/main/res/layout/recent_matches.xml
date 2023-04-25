@@ -15,10 +15,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="330dp"
         android:layout_height="150dp"
+        android:onClick="Stats"
         android:translationX="15dp"
         app:cardBackgroundColor="#BC3F51B5"
         app:cardCornerRadius="15dp"
-        android:onClick="Stats"
         app:cardElevation="0dp"
         android:elevation="8dp"
         android:divider="@android:color/transparent"
@@ -38,7 +38,7 @@
             android:translationY="42dp" />
 
         <TextView
-            android:id="@+id/investment"
+            android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chinnaswami Stadium"
