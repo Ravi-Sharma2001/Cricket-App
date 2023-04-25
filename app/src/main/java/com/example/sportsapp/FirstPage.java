@@ -36,6 +36,10 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
         rvMatches.setAdapter(adapter);
         // Set layout manager to position the items
         rvMatches.setLayoutManager(new LinearLayoutManager(this));
+        rvMatches.setOnClickListener(view -> {
+        Intent i=new Intent(getApplicationContext(),UpcomingMatchStats.class);
+        startActivity(i);
+        });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.upcoming);
@@ -48,13 +52,22 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
                 Intent intent = new Intent(this, UserProfile.class);
                 intent.putExtra("buttonStatus",item.getItemId());
                 startActivity(intent);
+                finish();
+
                 break;
             case R.id.recent1:
                 Intent intent1 = new Intent(this, RecentMatches.class);
                 startActivity(intent1);
+                finish();
                 break;
         }
         return true;
+    }
+    public void Stats(View view)
+    {
+        Intent i=new Intent(getApplicationContext(),UpcomingMatchStats.class);
+        startActivity(i);
+
     }
 
 }

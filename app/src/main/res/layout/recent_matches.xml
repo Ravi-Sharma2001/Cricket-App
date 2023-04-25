@@ -15,6 +15,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="330dp"
         android:layout_height="150dp"
+        android:onClick="Stats"
         android:translationX="15dp"
         app:cardBackgroundColor="#BC3F51B5"
         app:cardCornerRadius="15dp"

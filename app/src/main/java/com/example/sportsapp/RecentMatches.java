@@ -45,14 +45,21 @@ public class RecentMatches extends AppCompatActivity implements NavigationBarVie
                 Intent intent = new Intent(this, UserProfile.class);
                 intent.putExtra("buttonStatus",item.getItemId());
                 startActivity(intent);
+                finish();
                 break;
             case R.id.upcoming:
                 Intent intent1 = new Intent(this, FirstPage.class);
                 startActivity(intent1);
+                finish();
                 break;
 
         }
         return true;
+    }
+    public void Stats(View view)
+    {
+        Intent i=new Intent(getApplicationContext(),UpcomingMatchStats.class);
+        startActivity(i);
     }
 
 }

@@ -41,7 +41,7 @@ public class HistoryAdapter extends
         hometeam.setText(match.getHome());
         awayteam.setText(match.getAway());
         date.setText(match.getDate());
-        investment.setText("Income: "+match.getInvestment());
+        investment.setText("Invested: "+match.getInvestment());
         income.setText(match.getIncome());
     }
 
