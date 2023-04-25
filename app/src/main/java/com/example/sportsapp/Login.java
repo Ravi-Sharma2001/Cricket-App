@@ -21,16 +21,16 @@ public class Login extends AppCompatActivity {
     EditText username,password;
     FirebaseAuth auth;
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = auth.getCurrentUser();
-        if(currentUser != null){
-            Intent i=new Intent(getApplicationContext(), FirstPage.class);
-            startActivity(i);
-            finish();
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        FirebaseUser currentUser = auth.getCurrentUser();
+//        if(currentUser != null){
+//            Intent i=new Intent(getApplicationContext(), FirstPage.class);
+//            startActivity(i);
+//            finish();
+//        }
+//    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

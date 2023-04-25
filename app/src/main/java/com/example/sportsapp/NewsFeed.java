@@ -2,11 +2,17 @@ package com.example.sportsapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -33,6 +39,7 @@ import kotlin.jvm.Throws;
 public class NewsFeed extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener  {
     BottomNavigationView bottomNavigationView, bottomNav2;
     ArrayList<newsModel> allNewsList;
+    RecyclerView rvFeed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +49,10 @@ public class NewsFeed extends AppCompatActivity implements NavigationBarView.OnI
         bottomNavigationView.setOnItemSelectedListener(this);
         allNewsList = new ArrayList<>();
         getData();
+
+
     }
-    private void getData() {
+    public void getData() {
         //API CALL
         String api = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=255a8126b3f4429a9a98c2464efe2d7b";
 //            String api = "https://jsonplaceholder.typicode.com/photos";
@@ -73,6 +82,13 @@ public class NewsFeed extends AppCompatActivity implements NavigationBarView.OnI
 //                                Log.e("api","onSuccess:"+singleNews);
                             }
                             Log.e("api","onSuccess:"+allNewsList.size());
+                            rvFeed=(RecyclerView) findViewById(R.id.Feed);
+                            NewsAdapter adapter = new NewsAdapter(allNewsList);
+                            Log.e("data", String.valueOf(allNewsList.size()));
+                            // Attach the adapter to the recyclerview to populate items
+                            rvFeed.setAdapter(adapter);
+                            // Set layout manager to position the items
+                            rvFeed.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 //                            Log.e("api","onSuccess:"+allNewsList.get(0).getAuthor());
 
                         } catch (JSONException e) {
@@ -93,6 +109,7 @@ public class NewsFeed extends AppCompatActivity implements NavigationBarView.OnI
             public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("User-Agent", "Mozilla/5.0");
+//                Log.e("1","2");
                 return params;
             }
         };
@@ -103,7 +120,7 @@ public class NewsFeed extends AppCompatActivity implements NavigationBarView.OnI
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.recent1: {
-                Intent intent = new Intent(this, FirstPage.class);
+                Intent intent = new Intent(this, RecentMatches.class);
                 startActivity(intent);
                 break;
             }
