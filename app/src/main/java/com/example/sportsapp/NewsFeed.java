@@ -102,7 +102,7 @@ public class NewsFeed extends AppCompatActivity implements NavigationBarView.OnI
     }
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.recent: {
+            case R.id.recent1: {
                 Intent intent = new Intent(this, FirstPage.class);
                 startActivity(intent);
                 break;

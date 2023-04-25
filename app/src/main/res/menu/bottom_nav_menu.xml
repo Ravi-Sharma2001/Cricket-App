@@ -9,11 +9,12 @@
         android:title="Recent"
         android:icon="@drawable/recent"/>
     <item
+        android:id="@+id/news"
+        android:title="News"
+        android:icon="@drawable/news"/>
+    <item
         android:id="@+id/profile"
         android:title="Profile"
         android:icon="@drawable/user_icon"/>
-    <item
-        android:id="@+id/news"
-        android:title="News"
-        android:icon="@drawable/user_icon"/>
+
 </menu>
