@@ -1,6 +1,7 @@
 package com.example.sportsapp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,14 @@ public class HistoryAdapter extends
         TextView date = holder.date;
         TextView investment = holder.investment;
         TextView income = holder.income;
+        String incomeCheck = match.getIncome();
+        if(incomeCheck.charAt(0) == '+'){
+            income.setTextColor(Color.parseColor("#0F9D58"));
+        }
+        else{
+            income.setTextColor(Color.parseColor("#FF0000"));
+        }
+
         hometeam.setText(match.getHome());
         awayteam.setText(match.getAway());
         date.setText(match.getDate());
