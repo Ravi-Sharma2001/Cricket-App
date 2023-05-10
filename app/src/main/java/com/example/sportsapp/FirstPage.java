@@ -87,7 +87,11 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
                             MatchList.getString("location"),
                             MatchList.getString("match_id"),
                             MatchList.getString("t1_players"),
-                            MatchList.getString("t2_players")
+                            MatchList.getString("t2_players"),
+                            MatchList.getString("team1_prob"),
+                            MatchList.getString("team2_prob"),
+                                    MatchList.getString("team1_id"),
+                                    MatchList.getString("team2_id")
                             );
                             match.add(match1);
                         }
@@ -113,6 +117,11 @@ public class FirstPage extends AppCompatActivity implements NavigationBarView.On
                                         i.putExtra("Location",match.get(position).getStadium());
                                         i.putExtra("Team1_players",match.get(position).Team1_Players());
                                         i.putExtra("Team2_players",match.get(position).Team2_Players());
+                                        i.putExtra("Team1_prob",match.get(position).Team1_Prob());
+                                        i.putExtra("Team2_prob",match.get(position).Team2_Prob());
+                                        i.putExtra("Match_ID",match.get(position).getMatchID());
+                                        i.putExtra("Team1_ID",match.get(position).Team1_ID());
+                                        i.putExtra("Team2_ID",match.get(position).Team2_ID());
                                         startActivity(i);
                                     }
 
