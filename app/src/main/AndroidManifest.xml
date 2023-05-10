@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SportsApp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".CompletedMatchStats"
+            android:exported="false" />
         <activity
             android:name=".NewsFeed"
             android:exported="false" />

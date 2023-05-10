@@ -1,6 +1,8 @@
 package com.example.sportsapp;
 
+import android.app.appsearch.SearchResult;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContactsAdapter extends
         RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
-    List<Matches> Match;
+    ArrayList<Matches> Match;
+    int MatchID;
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,13 +45,14 @@ public class ContactsAdapter extends
         awayteam.setText(match.getAway());
         date.setText(match.getDate());
         stadium.setText(match.getStadium());
+//        MatchID=match.getMatchID();
     }
 
     @Override
     public int getItemCount() {
         return Match.size();
     }
-    public ContactsAdapter(List<Matches> matches) {
+    public ContactsAdapter(ArrayList<Matches> matches) {
         Match = matches;
     }
 
@@ -73,6 +78,7 @@ public class ContactsAdapter extends
             awayteam = (TextView) itemView.findViewById(R.id.awayteam);
             date = (TextView) itemView.findViewById(R.id.date);
             stadium = (TextView) itemView.findViewById(R.id.investment);
+
         }
     }
 }

@@ -9,11 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecentAdapter extends
         RecyclerView.Adapter<RecentAdapter.ViewHolder> {
-    List<Recent> Match;
+    ArrayList<Recent> Match;
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,7 +49,7 @@ public class RecentAdapter extends
     public int getItemCount() {
         return Match.size();
     }
-    public RecentAdapter(List<Recent> matches) {
+    public RecentAdapter(ArrayList<Recent> matches) {
         Match = matches;
     }
 

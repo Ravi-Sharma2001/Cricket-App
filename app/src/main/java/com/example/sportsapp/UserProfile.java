@@ -62,8 +62,8 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
-            TextView t=findViewById(R.id.textView7);
-            t.setText(user.getEmail());
+//            TextView t=findViewById(R.id.textView7);
+//            t.setText(user.getEmail());
         }
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.profile);
