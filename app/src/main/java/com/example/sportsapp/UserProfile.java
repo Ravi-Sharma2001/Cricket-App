@@ -41,9 +41,11 @@ import org.json.JSONObject;
 public class UserProfile extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
     BottomNavigationView bottomNavigationView, bottomNav2;
     ArrayList<MatchHistory> Matches;
+    RecyclerView rvMatches;
     FirebaseAuth auth;
     FirebaseUser user;
     JSONObject userDetails;
+    JSONObject MatchList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -51,6 +53,7 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
         setContentView(R.layout.activity_user_profile);
         auth=FirebaseAuth.getInstance();
         user= auth.getCurrentUser();
+        Matches = new ArrayList<>();
         if(user == null){
             Intent intent = new Intent(this, Login.class);
             startActivity(intent);
@@ -68,17 +71,21 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.profile);
         bottomNavigationView.setOnItemSelectedListener(this);
+        try {
+            callAPI2(user.getEmail());
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+//        RecyclerView matchHistory = (RecyclerView) findViewById(R.id.matchHistory);
 
-        RecyclerView matchHistory = (RecyclerView) findViewById(R.id.matchHistory);
-
-        // Initialize contacts
-        Matches = MatchHistory.createContactsList();
-        // Create adapter passing in the sample user data
-        HistoryAdapter adapter = new HistoryAdapter(Matches);
-        // Attach the adapter to the recyclerview to populate items
-        matchHistory.setAdapter(adapter);
-        // Set layout manager to position the items
-        matchHistory.setLayoutManager(new LinearLayoutManager(this));
+//        // Initialize contacts
+////        Matches = MatchHistory.createContactsList();
+//        // Create adapter passing in the sample user data
+//        HistoryAdapter adapter = new HistoryAdapter(Matches);
+//        // Attach the adapter to the recyclerview to populate items
+//        matchHistory.setAdapter(adapter);
+//        // Set layout manager to position the items
+//        matchHistory.setLayoutManager(new LinearLayoutManager(this));
     }
     public void changeDetails() throws JSONException {
         TextView name=findViewById(R.id.textView7);
@@ -118,6 +125,58 @@ public void callAPI(final String email) throws JSONException {
          }));
          RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
          requestQueue.add(jsonObjectRequest);
+    }
+    public void callAPI2(final String email) throws JSONException {
+
+        RequestQueue MyRequestQueue = Volley.newRequestQueue(this);
+        String url = "https://cricketappserver.onrender.com/userLog"; // <----enter your post url here
+        JSONObject object = new JSONObject();
+        object.put("email",email);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object,
+                (response -> {
+                    try{
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject = response;
+                        JSONArray array = new JSONArray();
+                        array = jsonObject.getJSONArray("arr");
+                        MatchList  = new JSONObject();
+                        for(int i=0;i<array.length();i++) {
+                            MatchList = array.getJSONObject(i);
+                            MatchHistory match2=new MatchHistory(
+                                    MatchList.getString("team1_name"),
+                                    MatchList.getString("team2_name"),
+                                    MatchList.getString("date"),
+                                    MatchList.getString("coins"),
+                                    MatchList.getString("won_coins")
+                            );
+                            Log.w("Data", "callAPI: "+MatchList );
+                            Matches.add(match2);
+                        }
+                        RecyclerView matchHistory = (RecyclerView) findViewById(R.id.matchHistory);
+
+//        // Initialize contacts
+////        Matches = MatchHistory.createContactsList();
+        // Create adapter passing in the sample user data
+                    HistoryAdapter adapter = new HistoryAdapter(Matches);
+                    // Attach the adapter to the recyclerview to populate items
+                    matchHistory.setAdapter(adapter);
+                    // Set layout manager to position the items
+                    matchHistory.setLayoutManager(new LinearLayoutManager(this));
+
+//                        Log.d("api",String.valueOf(response));
+                        Log.d("api","final obj:"+MatchList);
+//                         String error = response.getString("httpStatus");
+
+
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                })
+                ,(error -> {
+            Log.e("Error","Error"+error.getMessage());
+        }));
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(jsonObjectRequest);
     }
 
     public void logout(View view)
