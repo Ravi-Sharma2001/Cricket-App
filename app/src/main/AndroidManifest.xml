@@ -16,6 +16,9 @@
         android:theme="@style/Theme.SportsApp"
         tools:targetApi="31">
         <activity
+          android:name=".payment"
+         android:exported="false" />
+      <activity
             android:name=".BuyInAppCoins"
             android:exported="false" />
         <activity
