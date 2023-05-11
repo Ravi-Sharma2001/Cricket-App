@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:background="@drawable/frontwall"
+    tools:context=".BuyInAppCoins">
+
+    <ListView
+        android:id="@+id/CoinsList"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="100dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/PlusCoins"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="195dp"
+        android:layout_marginTop="233dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/coins" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/PlusCoins2"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="285dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/coins" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/PlusCoins3"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="333dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/coins" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/PlusCoins4"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="383dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/coins" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/PlusCoins5"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="433dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/coins" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/Plusrupees"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="242dp"
+        android:layout_marginEnd="-30dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rupees" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/Plusrupees2"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="-45dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rupees" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/Plusrupees3"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="342dp"
+        android:layout_marginEnd="-45dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rupees" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/Plusrupees4"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="-45dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rupees" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/Plusrupees5"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="443dp"
+        android:layout_marginEnd="-62dp"
+        android:translationX="-115dp"
+        android:translationY="-137dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rupees" />
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="330dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/backshadow"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:elevation="8dp"
+        app:cardBackgroundColor="#BC3F51B5"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CoinsList"
+        card_view:cardElevation="10dp" >
+
+        <TextView
+            android:id="@+id/FinalRupees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=": 0"
+            android:textColor="#E4D8D8"
+            android:textSize="30sp"
+            android:translationX="145dp"
+            android:translationY="8dp" />
+
+        <TextView
+            android:id="@+id/FinalCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=": 0"
+            android:textColor="#E4D8D8"
+            android:textSize="30sp"
+            android:translationX="145dp"
+            android:translationY="47dp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/Plusrupeesfinal"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="-57dp"
+            android:translationX="95dp"
+            android:translationY="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rupees" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/PlusCoinsFinal"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="5dp"
+            android:translationX="-85dp"
+            android:translationY="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/coins" />
+
+        <Button
+            android:id="@+id/BuyCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="BUY"
+            android:translationX="120dp"
+            android:translationY="90dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
