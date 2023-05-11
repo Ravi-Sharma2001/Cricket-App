@@ -51,8 +51,7 @@ public class UserProfile extends AppCompatActivity implements NavigationBarView.
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-        Intent i = new Intent(this, payment.class);
-        startActivity(i);
+
         auth=FirebaseAuth.getInstance();
         user= auth.getCurrentUser();
         Matches = new ArrayList<>();
