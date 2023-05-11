@@ -214,4 +214,9 @@ public void callAPI(final String email) throws JSONException {
         Intent in=new Intent(this,BuyInAppCoins.class);
         startActivity(in);
     }
+    public void Leaderboard(View view)
+    {
+        Intent in=new Intent(this,Leaderboard.class);
+        startActivity(in);
+    }
 }

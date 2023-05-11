@@ -34,7 +34,7 @@ public class BuyInAppCoins extends AppCompatActivity implements PaymentResultLis
         Final_Coins=findViewById(R.id.FinalCoins);
         Final_Rupees=findViewById(R.id.FinalRupees);
         buy=findViewById(R.id.BuyCoins);
-        String arr[]={"50 : 75","100 : 150","200 : 300","500 : 750","1000 : 1500",};
+        String arr[]={"50 : 75","100 : 150","200 : 300","500 : 750","1000 : 1500"};
         ArrayAdapter<String> ad=new ArrayAdapter<String>(this, R.layout.list_text,R.id.textItem,arr);
         l.setAdapter(ad);
 
