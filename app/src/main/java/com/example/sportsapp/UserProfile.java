@@ -210,4 +210,9 @@ public void callAPI(final String email) throws JSONException {
         }
         return true;
     }
+    public void BuyCoins(View view)
+    {
+        Intent in=new Intent(this,BuyInAppCoins.class);
+        startActivity(in);
+    }
 }
